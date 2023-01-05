@@ -26,7 +26,7 @@ def get_all_jeeps(cars: CarsType = cars) -> str:
             car += models + ", "
         else:
             car += models
-    # print(car)
+
     return car
 
 

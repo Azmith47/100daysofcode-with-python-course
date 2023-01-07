@@ -56,7 +56,7 @@ def test_combine_state_names_and_abbreviations():
     assert combine_state_names_and_abbreviations() == expected
 
 
-test_get_every_nth_state()
-test_get_state_abbrev()
-test_get_longest_state()
-test_combine_state_names_and_abbreviations()
+# test_get_every_nth_state()
+# test_get_state_abbrev()
+# test_get_longest_state()
+# test_combine_state_names_and_abbreviations()

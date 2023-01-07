@@ -16,16 +16,8 @@ def get_all_jeeps(cars: CarsType = cars) -> str:
     Retrieve the 'Jeep' models from the cars dict and join them by a
     comma and space (', '). Leave the original ordering intact.
     """
-    jeeps = cars["Jeep"]
-    cnt = len(jeeps)
-    car = ""
-
-    for models in jeeps:
-        cnt -= 1
-        if cnt != 0:
-            car += models + ", "
-        else:
-            car += models
+    jeeps = cars["Jeep"][::]
+    car = ", ".join(jeeps)
 
     return car
 
@@ -81,3 +73,6 @@ def sort_car_models(cars: CarsType = cars) -> CarsType:
     sortedcars = dict(sortedcars)
 
     return sortedcars
+
+
+print(get_all_jeeps())

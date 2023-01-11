@@ -33,14 +33,14 @@ def test_dragon_defensive_roll(m):
 
 
 def test_wizard_init_():
-    creature = Wizard("Gandalf", 1000)
-    assert creature.name == "Gandalf"
+    creature = Wizard("Gandolf", 1000)
+    assert creature.name == "Gandolf"
     assert creature.level == 1000
 
 
 @patch.object(random, "randint")
 def test_wizard_attack(m):
-    player = Wizard("Gandalf", 1000)
+    player = Wizard("Gandolf", 1000)
     creature = Dragon("Smaug", 70, 2, True)
     m.return_value = 10
     assert player.attack(creature) == True

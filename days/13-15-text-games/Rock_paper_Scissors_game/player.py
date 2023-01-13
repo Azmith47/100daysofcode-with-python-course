@@ -1,20 +1,23 @@
-from random import randint
+from action import Action
+import random
 
 
 class Player:
-    def __init__(self, name) -> None:
+    def __init__(self, name, wins=0, loses=0, draws=0) -> None:
         self.name = name
+        self.wins = wins
+        self.loses = loses
+        self.draws = draws
 
-    def get_random_choice(self):
-        return randint(0, 2)
+    def Choose_Action(self):
+        choices = [f"{action.name}[{action.value}]" for action in Action]
+        choices_str = ", ".join(choices)
+        selection = input(f"Enter a choice ({choices_str}): ")
+        selection = int(selection)
+        action = Action(selection)
+        return action
 
-    def Choose_Choice(self):
-        choice = 3
-        while choice not in range(0, 3):
-            choice = input("Choose either Rock (r), Paper (p) or Scissors (s): ")
-            if choice == "r":
-                return 0
-            if choice == "p":
-                return 1
-            if choice == "s":
-                return 2
+    def Get_Random_Action(self):
+        selection = random.randint(0, len(Action) - 1)
+        action = Action(selection)
+        return action

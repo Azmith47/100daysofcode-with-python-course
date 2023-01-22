@@ -7,9 +7,9 @@ def valid_positive_numbers(func):
     def wrapper(*args, **kwargs):
         for arg in args:
             if type(arg) != type(0):
-                return TypeError
+                raise TypeError("only intergers allowed")
             elif arg < 0:
-                return ValueError
+                raise ValueError("value less than 0")
         return func(*args, **kwargs)
 
     return wrapper

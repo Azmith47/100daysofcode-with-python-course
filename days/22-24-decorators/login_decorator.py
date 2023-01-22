@@ -16,16 +16,3 @@ def login_required(func):
                 return func(*args, **kwargs)
 
     return wrapper
-
-
-@login_required
-def welcome(user):
-    """Return a welcome message if logged in"""
-    return f"welcome back {user}"
-
-
-print(welcome("bob"))
-
-print(welcome("mike"))
-
-print(welcome("tory"))
